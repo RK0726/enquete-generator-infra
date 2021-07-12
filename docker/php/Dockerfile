@@ -6,15 +6,15 @@ COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
 RUN apk add --update --no-cache \
     nodejs \
-	npm \
+    npm \
     git \
     zip \
     unzip \
     vim \
-	postgresql-dev \
-	postgresql-client \
+    postgresql-dev \
+    postgresql-client \
     && docker-php-ext-install pdo_pgsql bcmath \
-	&& npm install vue@next \
-	&& npm install -g @vue/cli
+    && npm install vue@next \
+    && npm install -g @vue/cli
 
 WORKDIR /var/www/html
