@@ -14,7 +14,12 @@ RUN apk add --update --no-cache \
     postgresql-dev \
     postgresql-client \
     && docker-php-ext-install pdo_pgsql bcmath \
-    && npm install vue@next \
+    && npm update \
+    && npm install vue@next -D \
+    && npm install vue-loader@next -D \
+    && npm install vue-router@next -D \
+    && npm install @vue/compiler-sfc -D \
+    && npm install @types/webpack-env typescript ts-loader -D \
     && npm install -g @vue/cli
 
 WORKDIR /var/www/html
