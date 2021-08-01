@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
-      - ../src/smart-l/:/var/www/html
+      - ../src/enquete-generator/:/var/www/html
     environment:
       - DB_CONNECTION=pgsql
       - DB_HOST=postgres
@@ -27,7 +27,7 @@ services:
     depends_on:
       - app
     volumes:
-      - ../src/smart-l/:/var/www/html
+      - ../src/enquete-generator/:/var/www/html
 
   postgres:
     image: postgres:13
